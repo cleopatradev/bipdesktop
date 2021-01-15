@@ -29,11 +29,11 @@
       "target": [
         "nsis"
       ],
-      "icon": "app/cdn/favicon.ico"
+      "icon": "bin/favicon.ico"
     },
     "nsis": {
-      "installerIcon": "app/cdn/favicon.ico",
-      "uninstallerIcon": "app/cdn/favicon.ico",
+      "installerIcon": "bin/favicon.ico",
+      "uninstallerIcon": "bin/favicon.ico",
       "uninstallDisplayName": "Bip Desktop",
       "license": "license.txt",
       "oneClick": false,
@@ -51,6 +51,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-register": "^6.3.13",
     "child_process": "^1.0.2",
+    "custom-electron-titlebar": "^3.2.6",
     "electron-log": "^4.3.1",
     "electron-packager": "^14.2.1",
     "electron-updater": "^4.3.5",

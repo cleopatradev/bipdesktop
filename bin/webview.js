@@ -1,4 +1,5 @@
 import {BrowserWindow} from 'electron';
+const path = require('path');
 
 let mainWindow;
 
@@ -9,13 +10,16 @@ export default function createWindow() {
         center: true,
         show: false,
         title: 'bip Desktop',
-        icon: __dirname + '/bin/viewer/cdn/favicon.ico'
+        icon: __dirname + '/bin/favicon.ico'
     });
+
+    mainWindow.setMenu(null);
 
     mainWindow.loadURL('https://web.bip.com');
 
     mainWindow.webContents.on("did-finish-load", () => {
         mainWindow.show();
+        //mainWindow.setTitle("bip"); use default 'BiP Web'
     });
 
     //mainWindow.webContents.openDevTools();
