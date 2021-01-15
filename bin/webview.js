@@ -1,27 +1,27 @@
 import {BrowserWindow} from 'electron';
-const path = require('path');
-
-let mainWindow;
 
 export default function createWindow() {
-    mainWindow = new BrowserWindow({
-        width: 1150,
-        height: 850,
+    let mainWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        backgroundColor: '#f2f2f2',
         center: true,
         show: false,
-        title: 'bip Desktop',
+        title: 'bip Desktop', // not valid
         icon: __dirname + '/bin/favicon.ico'
     });
 
     mainWindow.setMenu(null);
+    mainWindow.maximize();
 
     mainWindow.loadURL('https://web.bip.com');
 
-    mainWindow.webContents.on("did-finish-load", () => {
+    mainWindow.webContents.on('did-finish-load', () => {
         mainWindow.show();
+        mainWindow.setBackgroundColor('#f2f2f2');
         //mainWindow.setTitle("bip"); use default 'BiP Web'
     });
 
-    //mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools(); for development
     return mainWindow
 }
